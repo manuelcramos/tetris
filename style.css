@@ -1,0 +1,214 @@
+/* Reset y estilos básicos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* === Estilos generales del body === */
+body {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  font-family: 'Press Start 2P', monospace;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+/* === Contenedor principal === */
+.container {
+  max-width: 900px;
+  width: 100%;
+  background-color: #1e272e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* === Título principal === */
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #f39c12;
+  text-shadow: 2px 2px 6px #e67e22;
+}
+
+/* Área principal de juego */
+.game-area {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que se adapte en pantallas pequeñas */
+}
+
+/* Tablero de juego principal (10 columnas x 20 filas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(15, 25px);
+  grid-template-rows: repeat(25, 25px);
+  gap: 2px;
+  background-color: #222f3e;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px #000;
+  user-select: none;
+   max-width: 100%;
+  overflow: hidden;
+}
+
+/* Tablero para próxima pieza (4x4) */
+.next-grid {
+  grid-template-columns: repeat(4, 25px);
+  grid-template-rows: repeat(4, 25px);
+  width: max-content;
+  margin: 0 auto;
+  background-color: #16222a;
+  box-shadow: inset 0 0 5px #000;
+  border-radius: 6px;
+  gap: 2px;
+}
+
+/* Cada celda del tablero */
+.cell {
+  width: 25px;
+  height: 25px;
+  background-color: #34495e; /* color de celda vacía */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Celda de próxima pieza más pequeña */
+.next-grid .cell {
+  width: 25px;
+  height: 25px;
+}
+
+/* Colores de las piezas según tipo */
+/* Usamos clases con el nombre de la pieza */
+.i { background-color: #1abc9c; }
+.j { background-color: #2980b9; }
+.l { background-color: #e67e22; }
+.o { background-color: #f1c40f; }
+.s { background-color: #27ae60; }
+.t { background-color: #9b59b6; }
+.z { background-color: #e74c3c; }
+
+/* Panel lateral info y controles */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 180px;
+  color: #eee;
+  text-align: center;
+}
+
+/* Títulos panel */
+.side-panel h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #f39c12;
+  text-shadow: 1px 1px 3px #e67e22;
+}
+
+/* Puntuación y nivel */
+.score-level p {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+/* Botones de control */
+.buttons button {
+  background-color: #34495e;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: #eee;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+}
+/* === Botones deshabilitados === */
+.buttons button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+/* === Hover de botones activos === */
+.buttons button:hover:not(:disabled) {
+  background-color: #f39c12;
+  color: #2c3e50;
+}
+
+/* Controles táctiles para móviles */
+.touch-controls {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  user-select: none;
+}
+
+/* Botones táctiles grandes y redondeados */
+.touch-btn {
+  width: 60px;
+  height: 60px;
+  background-color: #34495e;
+  border: none;
+  border-radius: 50%;
+  color: #eee;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+/* === Estilo al presionar botón táctil === */
+.touch-btn:active {
+  background-color: #f39c12;
+  color: #2c3e50;
+}
+
+/* Ocultar controles táctiles en pantallas grandes (no táctiles) */
+@media (hover: hover) and (pointer: fine) {
+  .touch-controls {
+    display: none;
+  }
+}
+
+/* Responsive: ajustar tamaños para móviles pequeños */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(10, 25px);
+    grid-template-rows: repeat(20, 25px);
+    gap: 1.5px;
+  }
+  .cell {
+    width: 25px;
+    height: 25px;
+  }
+  .next-grid {
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(4, 20px);
+  }
+  .next-grid .cell {
+    width: 20px;
+    height: 20px;
+  }
+  .side-panel {
+    width: 140px;
+  }
+  .touch-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+}
+
+
+
+

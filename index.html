@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris Clásico - Manuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuente estilo retro -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tetris Clásico</h1>
+    <!-- Zona del tablero del juego -->
+    <div class="game-area">
+      <div id="tetris-grid" class="grid"></div>
+
+      <!-- Panel lateral con info y controles -->
+      <div class="side-panel">
+        <div class="next-piece">
+          <h2>Próxima Pieza</h2>
+          <div id="next-grid" class="grid next-grid"></div>
+        </div>
+        <!-- Puntuación y nivel actual -->
+        <div class="score-level">
+          <p><strong>Puntuación:</strong> <span id="score">0</span></p>
+          <p><strong>Nivel:</strong> <span id="level">1</span></p>
+        </div>
+
+        <!-- Controles de juego -->
+        <div class="buttons">
+          <button id="start-btn">Iniciar</button>
+          <button id="pause-btn" disabled>Pausa</button>
+          <button id="reset-btn" disabled>Reiniciar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles táctiles visibles en móviles y tablets -->
+    <div class="touch-controls" aria-label="Controles táctiles">
+      <button id="left-btn" class="touch-btn" aria-label="Mover izquierda">←</button>
+      <button id="rotate-btn" class="touch-btn" aria-label="Rotar pieza">⟳</button>
+      <button id="down-btn" class="touch-btn" aria-label="Bajar pieza">↓</button>
+      <button id="right-btn" class="touch-btn" aria-label="Mover derecha">→</button>
+    </div>
+    <footer>
+      <p>Juego desarrollado por Manuel Campos</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
