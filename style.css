@@ -209,6 +209,44 @@ h1 {
   }
 }
 
+/* Joystick táctil estilo consola */
+#joystick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
 
+.joystick-row {
+  display: flex;
+  gap: 15px;
+}
+
+#joystick button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #0074D9;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px #0074D9;
+  transition: background-color 0.2s;
+}
+
+#joystick button:hover {
+  background-color: #005fa3;
+}
+
+.action-button {
+  background-color: #2ECC40; /* Verde para rotar */
+  box-shadow: 0 0 8px #2ECC40;
+}
+
+.action-button:hover {
+  background-color: #27ae60;
+}
 
 

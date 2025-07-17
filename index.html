@@ -29,20 +29,23 @@
 
         <!-- Controles de juego -->
         <div class="buttons">
-          <button id="start-btn">Iniciar</button>
-          <button id="pause-btn" disabled>Pausa</button>
-          <button id="reset-btn" disabled>Reiniciar</button>
+          <button onclick="startGame()">🎮 Iniciar</button>
+  <button onclick="togglePause()">⏸️ Pausa</button>
+  <button onclick="resetGame()">🔁 Reiniciar</button>
         </div>
       </div>
     </div>
 
     <!-- Controles táctiles visibles en móviles y tablets -->
-    <div class="touch-controls" aria-label="Controles táctiles">
-      <button id="left-btn" class="touch-btn" aria-label="Mover izquierda">←</button>
-      <button id="rotate-btn" class="touch-btn" aria-label="Rotar pieza">⟳</button>
-      <button id="down-btn" class="touch-btn" aria-label="Bajar pieza">↓</button>
-      <button id="right-btn" class="touch-btn" aria-label="Mover derecha">→</button>
-    </div>
+    <div id="joystick">
+  <div class="joystick-row">
+    <button onclick="rotate()" class="action-button">🔄</button>
+  </div>
+  <div class="joystick-row">
+    <button onclick="moveLeft()">⬅️</button>
+    <button onclick="moveDown()">⬇️</button>
+    <button onclick="moveRight()">➡️</button>
+  </div>
     <footer>
       <p>Juego desarrollado por Manuel Campos</p>
     </footer>
