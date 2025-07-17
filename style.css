@@ -38,9 +38,9 @@ h1 {
 /* Área principal de juego */
 .game-area {
  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap; /* para que en móviles se ajuste */
 }
@@ -99,13 +99,15 @@ h1 {
 
 /* Panel lateral info y controles */
 .side-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  width: 180px;
-  color: #eee;
-  text-align: center;
+  display: flex;                     /* Convierte el contenedor en un flexbox */
+  flex-direction: column;           /* Organiza los elementos en columna (de arriba hacia abajo) */
+  gap: 25px;                        /* Espacio vertical entre cada sección interna (piezas, puntuación, botones) */
+  width: auto;                      /* Deja que el ancho se ajuste automáticamente al contenido */
+  color: #eee;                      /* Color del texto blanco/gris claro */
+  text-align: center;               /* Centra el texto dentro de cada bloque hijo */
+  align-items: center;              /* Centra horizontalmente todos los elementos hijos */
 }
+
 
 /* Títulos panel */
 .side-panel h2 {
