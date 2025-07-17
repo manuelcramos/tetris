@@ -37,11 +37,8 @@ h1 {
 
 /* Área principal de juego */
 .game-area {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que se adapte en pantallas pequeñas */
+flex-direction: column;
+    align-items: center;
 }
 
 /* Tablero de juego principal (10 columnas x 20 filas) */
@@ -116,8 +113,9 @@ h1 {
 
 /* Puntuación y nivel */
 .score-level p {
-  font-size: 1.1em;
-  margin-bottom: 6px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Botones de control */
@@ -173,12 +171,12 @@ h1 {
   color: #2c3e50;
 }
 
-/* Ocultar controles táctiles en pantallas grandes (no táctiles) */
-@media (hover: hover) and (pointer: fine) {
-  .touch-controls {
-    display: none;
-  }
-}
+/* Escalado visual para que se vea bien en móviles */
+@media (max-width: 768px) {
+  .container {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }}
 
 /* Responsive: ajustar tamaños para móviles pequeños */
 @media (max-width: 480px) {
@@ -200,7 +198,16 @@ h1 {
     height: 20px;
   }
   .side-panel {
-    width: 140px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .touch-btn {
     width: 50px;
