@@ -37,8 +37,12 @@ h1 {
 
 /* Área principal de juego */
 .game-area {
-flex-direction: column;
-    align-items: center;
+ display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* para que en móviles se ajuste */
 }
 
 /* Tablero de juego principal (10 columnas x 20 filas) */
@@ -171,50 +175,84 @@ flex-direction: column;
   color: #2c3e50;
 }
 
-/* Escalado visual para que se vea bien en móviles */
+/* Mostrar joystick solo en móviles */
 @media (max-width: 768px) {
-  .container {
-    transform: scale(0.85);
-    transform-origin: top center;
-  }}
+  #joystick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
 
-/* Responsive: ajustar tamaños para móviles pequeños */
+/* === Área principal de juego === */
+.game-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Para móviles se adapta */
+}
+
+/* === Panel lateral info y controles === */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 180px;
+  color: #eee;
+  text-align: center;
+}
+
+/* Panel lateral en móviles */
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: repeat(10, 25px);
     grid-template-rows: repeat(20, 25px);
     gap: 1.5px;
   }
+
   .cell {
     width: 25px;
     height: 25px;
   }
+
   .next-grid {
     grid-template-columns: repeat(4, 20px);
     grid-template-rows: repeat(4, 20px);
   }
+
   .next-grid .cell {
     width: 20px;
     height: 20px;
   }
+
   .side-panel {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .buttons {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    gap: 15px;
+    gap: 10px;
   }
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   .touch-btn {
     width: 50px;
     height: 50px;
     font-size: 1.6rem;
   }
 }
+
 
 /* Joystick táctil estilo consola */
 #joystick {

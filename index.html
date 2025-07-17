@@ -11,41 +11,43 @@
 <body>
   <div class="container">
     <h1>Tetris Clásico</h1>
-    <!-- Zona del tablero del juego -->
+
     <div class="game-area">
+      <!-- Tablero principal -->
       <div id="tetris-grid" class="grid"></div>
 
-      <!-- Panel lateral con info y controles -->
+      <!-- Panel lateral -->
       <div class="side-panel">
         <div class="next-piece">
           <h2>Próxima Pieza</h2>
           <div id="next-grid" class="grid next-grid"></div>
         </div>
-        <!-- Puntuación y nivel actual -->
+
         <div class="score-level">
           <p><strong>Puntuación:</strong> <span id="score">0</span></p>
           <p><strong>Nivel:</strong> <span id="level">1</span></p>
         </div>
 
-        <!-- Controles de juego -->
         <div class="buttons">
           <button onclick="startGame()">🎮 Iniciar</button>
-  <button onclick="togglePause()">⏸️ Pausa</button>
-  <button onclick="resetGame()">🔁 Reiniciar</button>
+          <button onclick="togglePause()">⏸️ Pausa</button>
+          <button onclick="resetGame()">🔁 Reiniciar</button>
         </div>
       </div>
     </div>
 
-    <!-- Controles táctiles visibles en móviles y tablets -->
+    <!-- Joystick táctil debajo del tablero -->
     <div id="joystick">
-  <div class="joystick-row">
-    <button onclick="rotate()" class="action-button">🔄</button>
-  </div>
-  <div class="joystick-row">
-    <button onclick="moveLeft()">⬅️</button>
-    <button onclick="moveDown()">⬇️</button>
-    <button onclick="moveRight()">➡️</button>
-  </div>
+      <div class="joystick-row">
+        <button onclick="rotate()" class="action-button">🔄</button>
+      </div>
+      <div class="joystick-row">
+        <button onclick="moveLeft()">⬅️</button>
+        <button onclick="moveDown()">⬇️</button>
+        <button onclick="moveRight()">➡️</button>
+      </div>
+    </div>
+
     <footer>
       <p>Juego desarrollado por Manuel Campos</p>
     </footer>
@@ -53,6 +55,7 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
 
 
